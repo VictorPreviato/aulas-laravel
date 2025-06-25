@@ -17,13 +17,19 @@
     </div>
 
     <div class="mb-3">
-        <label class="form-label">Telefone</label>
-        <input type="text" id="telefoneMask" class="form-control" name="numero" >
+        <label class="form-label @error ('numero') is-invalid @enderror">Telefone</label>
+        <input type="text" id="telefoneMask" class="form-control" name="numero" placeholder="(00) 00000-0000" >
+     @if ($errors->has('numero'))
+    <div class="invalid-feedback">O campo telefone é obrigatório</div>
+    @endif
     </div>
 
     <div class="mb-3">
-        <label class="form-label">E-mail</label>
-        <input type="text" class="form-control" name="email">
+        <label class="form-label @error ('email') is-invalid @enderror">E-mail</label>
+        <input type="text" class="form-control" name="email" placeholder="exemplo@email.com">
+    @if ($errors->has('numero'))
+    <div class="invalid-feedback">O campo telefone é obrigatório</div>
+    @endif
     </div>
 
     <button type="submit" class="btn btn-success">Salvar</button>

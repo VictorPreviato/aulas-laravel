@@ -21,7 +21,9 @@ class FormRequestContatos extends FormRequest
         // Verifica se o método é POST ou PUT 
         if($this->method() == 'POST' || $this->method() == 'PUT'){
             $request = [
-                'nome' => 'required', // essa validação pode ser feita no frontend
+            'nome' => 'required|string|max:255',
+            'numero' => 'required|regex:/^\(\d{2}\)\s\d{4,5}-\d{4}$/', // Validação do telefone
+             'email' => ['required', 'email', 'regex:/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/'], // Validação do e-mail
             ];
         }
         return $request;
