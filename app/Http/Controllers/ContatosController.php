@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Contatos;
 use Illuminate\Http\Request;
+use App\Http\Requests\FormRequestContatos; // Importando arquivi de validação
 
 class ContatosController extends Controller
 {
@@ -20,7 +21,7 @@ class ContatosController extends Controller
         return back();
     }
 
-    public function create(Request $request){
+    public function create(FormRequestContatos $request){
         // condicional para entendimento do envio dos dados para o  banco de dados
         if($request->method() == "POST"){
             $data = $request->all();
