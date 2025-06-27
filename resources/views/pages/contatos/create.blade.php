@@ -12,7 +12,7 @@
         <label class="form-label">Nome</label>
         <input type="text" class="form-control @error('nome') is-invalid @enderror" name="nome">
     @if ($errors->has('nome'))
-    <div class="invalid-feedback">O campo nome é obrigatório</div>
+    <div class="invalid-feedback">O campo Nome é obrigatório</div>
     @endif
     </div>
 
@@ -20,7 +20,7 @@
         <label class="form-label @error ('numero') is-invalid @enderror">Telefone</label>
         <input type="text" id="telefoneMask" class="form-control" name="numero" placeholder="(00) 00000-0000" >
      @if ($errors->has('numero'))
-    <div class="invalid-feedback">O campo telefone é obrigatório</div>
+    <div class="invalid-feedback">O campo Telefone é obrigatório</div>
     @endif
     </div>
 
@@ -28,7 +28,7 @@
         <label class="form-label @error ('email') is-invalid @enderror">E-mail</label>
         <input type="text" class="form-control" name="email" placeholder="exemplo@email.com">
     @if ($errors->has('numero'))
-    <div class="invalid-feedback">O campo telefone é obrigatório</div>
+    <div class="invalid-feedback">O campo E-mail é obrigatório</div>
     @endif
     </div>
 
